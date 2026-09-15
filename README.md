@@ -9,7 +9,7 @@ This repository provides (1) a 6,000-instance Turkish Aspect-Based Sentiment Ana
 | `6k_absa_train.csv` | 4,500 | Training split |
 | `6k_absa_dev.csv` | 750 | Validation split |
 | `6k_absa_test.csv` | 750 | Held-out test split |
-| `final_model.ipynb` | — | Training/evaluation notebook for the proposed architecture |
+| `fusion_model.ipynb` | — | Training/evaluation notebook for the proposed architecture |
 
 Each row contains:
 
@@ -50,7 +50,7 @@ Ten instances in the pool are `LLM-generated` rather than `collected`, added dur
 
 ## Reproducing the experiments
 
-The training/evaluation code for the proposed architecture (BERT+ELECTRA dual-encoder BiLSTM-CRF with convex-combination fusion, BIOS scheme, duplicate subword propagation) is provided as a Colab notebook: [`final_model.ipynb`](final_model.ipynb). See the notebook's first cell for setup instructions (Google Drive mount, GPU runtime).
+The training/evaluation code for the proposed architecture (BERT+ELECTRA dual-encoder BiLSTM-CRF with convex-combination fusion, BIOS scheme, duplicate subword propagation) is provided as a Colab notebook: [`fusion_model.ipynb`](fusion_model.ipynb). See the notebook's first cell for setup instructions (Google Drive mount, GPU runtime).
 
 ## License and citation
 
