@@ -1,6 +1,6 @@
 # Turkish Aspect Term Extraction: Dataset & BERT-ELECTRA Fusion Model
 
-This repository provides (1) a 6,000-instance Turkish Aspect-Based Sentiment Analysis (ABSA) dataset for aspect term extraction (ATE) research, spanning multiple domains (products, accommodation, education, social media, and more), and (2) the training/evaluation code for our proposed dual-encoder (BERT+ELECTRA) BiLSTM-CRF architecture. This repository accompanies our paper submitted to *Expert Systems* (Wiley).
+This repository provides (1) a 6,000-instance Turkish Aspect-Based Sentiment Analysis (ABSA) dataset for aspect term extraction (ATE) research, spanning multiple domains (products, accommodation, education, social media, and more), and (2) the training/evaluation code for our proposed dual-encoder (BERT+ELECTRA) BiLSTM-CRF architecture. 
 
 ## Contents
 
