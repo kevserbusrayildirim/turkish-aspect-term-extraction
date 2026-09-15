@@ -1,6 +1,6 @@
 # Turkish Aspect Term Extraction: Dataset & BERT-ELECTRA Fusion Model
 
-This repository provides (1) a 6,000-instance Turkish Aspect-Based Sentiment Analysis (ABSA) dataset for aspect term extraction (ATE) research, spanning multiple domains (products, accommodation, education, social media, and more), and (2) the training/evaluation code for our proposed dual-encoder (BERT+ELECTRA) BiLSTM-CRF architecture. 
+This repository provides (1) a 6,000-instance Turkish Aspect-Based Sentiment Analysis (ABSA) dataset for aspect term extraction (ATE) research, spanning multiple domains (products, accommodation, education, social media, and more), and (2) the training/evaluation code for our proposed dual-encoder (BERT+ELECTRA) BiLSTM-CRF architecture. This repository accompanies our paper submitted to *Expert Systems* (Wiley).
 
 ## Contents
 
@@ -10,6 +10,8 @@ This repository provides (1) a 6,000-instance Turkish Aspect-Based Sentiment Ana
 | `6k_absa_dev.csv` | 750 | Validation split |
 | `6k_absa_test.csv` | 750 | Held-out test split |
 | `fusion_model.ipynb` | — | Training/evaluation notebook for the proposed architecture |
+| `ANNOTATION_GUIDELINES.md` | — | Rules and worked examples used to annotate aspect terms and polarity |
+| `annotation_helper.py` | — | Script for converting annotated (text, aspect, polarity) triples to BIOS tags |
 
 Each row contains:
 
@@ -30,7 +32,7 @@ Aspect terms are labeled at the word level using the **BIOS** scheme: `B` (begin
 
 ## Annotation process
 
-Text was collected from diverse online sources (e-commerce, accommodation/travel platforms, streaming/TV/film platforms, social media, and forums), excluding very short or semantically incomplete sentences, and excluding any personal information or offensive/discriminatory content. Aspect terms were annotated exactly as they appear in the source text.
+Text was collected from diverse online sources (e-commerce, accommodation/travel platforms, streaming/TV/film platforms, social media, and forums), excluding very short or semantically incomplete sentences, and excluding any personal information or offensive/discriminatory content. Aspect terms were annotated exactly as they appear in the source text. Full annotation rules and worked examples are provided in [`ANNOTATION_GUIDELINES.md`](ANNOTATION_GUIDELINES.md).
 
 **Inter-annotator agreement.** To assess annotation reliability, an independent study was conducted on a random 50-instance sample: two annotators, blind to the original labels and to each other's responses, independently re-labeled aspect terms and polarity for the same sentences, following the same annotation guidelines used in the original collection. Agreement was measured at the word level (each annotator's aspect spans converted to BIOS tags) via Cohen's κ, span-level exact-match F1 (seqeval), and Cohen's κ on polarity for jointly-identified aspects.
 
