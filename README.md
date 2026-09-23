@@ -50,6 +50,8 @@ A full audit of the train/validation/test split was conducted to verify strict i
 
 Ten instances in the pool are `LLM-generated` rather than `collected`, added during this audit to restore the dataset to exactly 6,000 instances after removing the 8 exact duplicates and 2 ambiguous instances; they follow the same BIOS annotation convention and are explicitly flagged via the `source` column for transparency.
 
+A subsequent, more extensive audit checked every instance for internal consistency between the `target` and `polarity` fields (equal length), valid polarity/tag values, and well-formed list syntax. Of the original 6,000 instances, 733 (12.2%) had some inconsistency, predominantly a mismatch between the number of listed aspect terms and the number of polarity labels. Each was corrected by cross-referencing the larger source collection the 6K subset was drawn from, and, where no reliable source match existed, by manual review of the sentence text; all 6,000 instances now have fully consistent `target`/`polarity`/`tokens`/`labels` fields.
+
 ## Reproducing the experiments
 
 The training/evaluation code for the proposed architecture (BERT+ELECTRA dual-encoder BiLSTM-CRF with convex-combination fusion, BIOS scheme, duplicate subword propagation) is provided as a Colab notebook: [`fusion_model.ipynb`](fusion_model.ipynb). See the notebook's first cell for setup instructions (Google Drive mount, GPU runtime).
